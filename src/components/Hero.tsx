@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* Visual */}
           <div className="relative animate-slide-up">
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-300">
+            <div className="bg-gradient-to-br from-blue-100 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-300" style={{background: 'linear-gradient(to bottom right, rgb(219, 234, 254), #1283ec)'}}>
               {/* Header with icon and badge */}
               <div className="flex items-center justify-between mb-6">
                 <div className="bg-gradient-to-r from-accent-500 to-accent-600 w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
