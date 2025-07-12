@@ -117,7 +117,6 @@ const Hero = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute top-1/2 -left-2 w-4 h-4 bg-accent-400 rounded-full opacity-80"></div>
             <div className="absolute top-1/4 -right-2 w-3 h-3 bg-green-400 rounded-full opacity-80"></div>
