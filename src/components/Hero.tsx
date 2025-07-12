@@ -61,55 +61,55 @@ const Hero = () => {
 
           {/* Visual */}
           <div className="relative animate-slide-up">
-            <div className="bg-gradient-to-br from-blue-100 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-300" style={{background: 'linear-gradient(to bottom right, rgb(219, 234, 254), #1283ec)'}}>
+            <div className="bg-gradient-to-br from-slate-800 to-primary-900 rounded-2xl shadow-2xl p-8 lg:p-12 border border-slate-700">
               {/* Header with icon and badge */}
               <div className="flex items-center justify-between mb-6">
-                <div className="bg-gradient-to-r from-accent-500 to-accent-600 w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="bg-gradient-to-r from-accent-400 to-accent-500 w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
                   <Clock className="w-8 h-8 text-white" />
                 </div>
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                <div className="bg-green-400 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
                   Онлайн
                 </div>
               </div>
               
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-blue-900 mb-3">
+                <h3 className="text-2xl font-bold text-white mb-3">
                   Работаем 24/7
                 </h3>
-                <p className="text-blue-800 mb-8 leading-relaxed">
+                <p className="text-slate-200 mb-8 leading-relaxed">
                   Принимаем и обрабатываем заявки круглосуточно. 
                   Быстрая обработка и профессиональный сервис.
                 </p>
                 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-blue-700 mb-1">24</div>
-                    <div className="text-sm text-blue-800 font-medium">часа</div>
+                  <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="text-3xl font-bold text-accent-300 mb-1">24</div>
+                    <div className="text-sm text-slate-200 font-medium">часа</div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-300 to-blue-400 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-blue-800 mb-1">7</div>
-                    <div className="text-sm text-blue-900 font-medium">дней</div>
+                  <div className="bg-gradient-to-br from-accent-400/30 to-accent-500/20 backdrop-blur-sm rounded-xl p-4 border border-accent-300/30">
+                    <div className="text-3xl font-bold text-accent-200 mb-1">7</div>
+                    <div className="text-sm text-slate-200 font-medium">дней</div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-blue-700 mb-1">365</div>
-                    <div className="text-sm text-blue-800 font-medium">дней</div>
+                  <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="text-3xl font-bold text-accent-300 mb-1">365</div>
+                    <div className="text-sm text-slate-200 font-medium">дней</div>
                   </div>
                 </div>
                 
                 {/* Features */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-slate-200">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span>Обработка заявок за 15 минут</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-slate-200">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span>Поддержка в мессенджерах</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-slate-200">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span>Отслеживание груза онлайн</span>
                   </div>
                 </div>
@@ -117,10 +117,10 @@ const Hero = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-accent-200 to-accent-300 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute top-1/2 -left-2 w-4 h-4 bg-accent-400 rounded-full opacity-60"></div>
-            <div className="absolute top-1/4 -right-2 w-3 h-3 bg-blue-400 rounded-full opacity-60"></div>
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute top-1/2 -left-2 w-4 h-4 bg-accent-400 rounded-full opacity-80"></div>
+            <div className="absolute top-1/4 -right-2 w-3 h-3 bg-green-400 rounded-full opacity-80"></div>
           </div>
         </div>
       </div>
