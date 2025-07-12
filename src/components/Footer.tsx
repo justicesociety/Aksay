@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer id="contacts" className="bg-gray-950 text-white border-t border-gray-800">
+      <footer id="contacts" className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -30,11 +30,11 @@ const Footer = () => {
                 <img 
                   src="/LOGOAKSAY.png" 
                   alt="Аксай Логистик" 
-                  className="h-32 w-auto bg-gray-800 rounded-lg p-2 shadow-lg border border-gray-700"
+                  className="h-32 w-auto bg-white rounded-lg p-2 shadow-lg"
                 />
               </a>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               Профессиональная доставка товаров на склады маркетплейсов. 
               Работаем по всей России с гарантией качества.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
                   <a href="tel:+79262168760" className="hover:text-accent-400 transition-colors block">
                     +7 (926) 216-87-60
                   </a>
-                  <p className="text-gray-500 text-sm">Круглосуточно</p>
+                  <p className="text-gray-400 text-sm">Круглосуточно</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -66,14 +66,14 @@ const Footer = () => {
                   <a href="mailto:Gruzoperevozki-moskva24@mail.ru" className="hover:text-accent-400 transition-colors">
                     Gruzoperevozki-moskva24@mail.ru
                   </a>
-                  <p className="text-gray-500 text-sm">Ответим в течение часа</p>
+                  <p className="text-gray-400 text-sm">Ответим в течение часа</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-accent-400 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <p>Москва, 1-й Дорожный пр. д 7, стр.1</p>
-                  <p className="text-gray-500 text-sm">Офис и склад</p>
+                  <p className="text-gray-400 text-sm">Офис и склад</p>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <li key={index}>
                   <button 
                     onClick={() => setActiveServiceModal(service.key)}
-                    className="text-gray-400 hover:text-white transition-colors text-sm text-left"
+                    className="text-gray-300 hover:text-white transition-colors text-sm text-left"
                   >
                     {service.name}
                   </button>
@@ -108,23 +108,23 @@ const Footer = () => {
             <div className="space-y-4 mb-8">
               <a
                 href="https://wa.me/79361302070"
-                className="flex items-center text-gray-400 hover:text-white transition-colors"
+                className="flex items-center text-gray-300 hover:text-white transition-colors"
               >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 WhatsApp
               </a>
               <a
                 href="https://t.me/+79262168760"
-                className="flex items-center text-gray-400 hover:text-white transition-colors"
+                className="flex items-center text-gray-300 hover:text-white transition-colors"
               >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 Telegram
               </a>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
+            <div className="bg-gray-800 rounded-lg p-4">
               <h5 className="font-semibold mb-2">Быстрая связь</h5>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-300 text-sm mb-3">
                 Напишите нам в мессенджер для быстрого ответа
               </p>
               <a
@@ -138,9 +138,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 lg:mb-0">
+            <div className="text-gray-300 text-sm mb-4 lg:mb-0">
               <p>© 2024 Аксай Логистик. Все права защищены.</p>
               <p className="mt-1">
                 ИП Сулейманов Марат Сулейманович | ИНН: 053400672413 | ОГРНИП: 320057100041610 | 
@@ -155,13 +155,13 @@ const Footer = () => {
             <div className="flex space-x-6 text-sm">
               <button 
                 onClick={() => setIsOfferModalOpen(true)}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Договор оферты
               </button>
               <button 
                 onClick={() => setIsRequisitesModalOpen(true)}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Реквизиты
               </button>

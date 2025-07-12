@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-900/95 backdrop-blur-sm'
+      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -65,7 +65,7 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 onClick={item.name === 'Главная' ? handleHomeClick : undefined}
-                className="text-gray-300 hover:text-white font-medium transition-colors duration-200 relative group"
+                className="text-gray-700 hover:text-primary-800 font-medium transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
@@ -86,19 +86,19 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-300" />
+              <X className="w-6 h-6 text-gray-700" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-300" />
+              <Menu className="w-6 h-6 text-gray-700" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-700 animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-gray-200 animate-fade-in">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <a
@@ -108,7 +108,7 @@ const Header = () => {
                     if (item.name === 'Главная') handleHomeClick(e);
                     setIsMenuOpen(false);
                   }}
-                  className="text-gray-300 hover:text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="text-gray-700 hover:text-primary-800 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   {item.name}
                 </a>
