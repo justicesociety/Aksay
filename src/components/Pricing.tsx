@@ -54,13 +54,13 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-16 lg:py-24 bg-gray-50">
+    <section id="pricing" className="py-16 lg:py-24 bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-primary-800 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Тарифы на доставку
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Прозрачные цены без скрытых комиссий. Стоимость зависит от веса, объёма и направления доставки
           </p>
         </div>
@@ -68,23 +68,23 @@ const Pricing = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Pricing Table */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="bg-primary-800 text-white p-6">
+            <div className="bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
+              <div className="bg-gray-800 text-white p-6 border-b border-gray-700">
                 <h3 className="text-xl font-semibold flex items-center">
                   <FileText className="w-6 h-6 mr-2" />
                   Тарифы Аксай Логистик
                 </h3>
               </div>
               
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-gray-700">
                 {pricingData.map((item, index) => (
-                  <div key={index} className="p-6 hover:bg-gray-50 transition-colors">
+                  <div key={index} className="p-6 hover:bg-gray-800 transition-colors">
                     <div className="flex justify-between items-center">
                       <div>
-                        <h4 className="font-semibold text-primary-800 mb-1">
+                        <h4 className="font-semibold text-white mb-1">
                           {item.service}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-400">
                           {item.description}
                         </p>
                       </div>
@@ -98,13 +98,13 @@ const Pricing = () => {
                 ))}
               </div>
 
-              <div className="bg-accent-50 p-6">
-                <p className="text-sm text-gray-600 mb-4">
+              <div className="bg-gray-800 p-6 border-t border-gray-700">
+                <p className="text-sm text-gray-400 mb-4">
                   * Окончательная стоимость рассчитывается индивидуально с учётом всех параметров груза
                 </p>
                 <a
                   href={isAuthenticated ? "/dashboard" : "#calculator"}
-                  className="inline-flex items-center text-accent-600 font-medium hover:text-accent-700 transition-colors"
+                  className="inline-flex items-center text-accent-400 font-medium hover:text-accent-300 transition-colors"
                 >
                   {isAuthenticated ? 'Создать заказ →' : 'Оформить заявку →'}
                 </a>
@@ -114,25 +114,25 @@ const Pricing = () => {
 
           {/* Features */}
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-xl font-semibold text-primary-800 mb-6">
+            <div className="bg-gray-900 rounded-2xl shadow-xl p-8 border border-gray-700">
+              <h3 className="text-xl font-semibold text-white mb-6">
                 Что входит в стоимость
               </h3>
               <ul className="space-y-4">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-accent-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-300">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl p-8 text-white border border-accent-500">
               <h3 className="text-xl font-semibold mb-4">
                 Скидки для постоянных клиентов
               </h3>
-              <div className="space-y-3 text-accent-100">
+              <div className="space-y-3 text-accent-200">
                 <div className="flex justify-between">
                   <span>От 10 заказов:</span>
                   <span className="font-semibold">-5%</span>
@@ -157,7 +157,7 @@ const Pricing = () => {
         <div className="mt-16 text-center">
           <a
             href="/pricing"
-            className="inline-flex items-center bg-primary-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 hover:shadow-lg hover:scale-105"
+            className="inline-flex items-center bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-700 transition-all duration-200 hover:shadow-lg hover:scale-105"
           >
             <FileText className="w-5 h-5 mr-2" />
             Открыть полный прайс-лист

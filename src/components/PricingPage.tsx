@@ -29,7 +29,7 @@ const PricingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-900 py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Back to Home Button */}
         <div className="mb-6">
@@ -46,17 +46,17 @@ const PricingPage = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <FileText className="w-8 h-8 text-accent-500" />
-            <h1 className="text-3xl lg:text-4xl font-bold text-primary-800">
+            <h1 className="text-3xl lg:text-4xl font-bold text-white">
               Полный прайс-лист
             </h1>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Актуальные тарифы на доставку товаров на склады всех маркетплейсов
           </p>
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+        <div className="bg-gray-800 rounded-2xl shadow-xl p-6 mb-8 border border-gray-700">
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {/* Search */}
             <div className="relative">
@@ -66,7 +66,7 @@ const PricingPage = () => {
                 placeholder="Поиск по названию или городу..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                className="w-full pl-10 pr-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors bg-gray-700 text-white placeholder-gray-400"
               />
             </div>
 
@@ -76,7 +76,7 @@ const PricingPage = () => {
               <select
                 value={selectedMarketplace}
                 onChange={(e) => setSelectedMarketplace(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors appearance-none"
+                className="w-full pl-10 pr-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors appearance-none bg-gray-700 text-white"
               >
                 {marketplaces.map(marketplace => (
                   <option key={marketplace.value} value={marketplace.value}>
@@ -88,7 +88,7 @@ const PricingPage = () => {
           </div>
 
           <div className="flex justify-between items-center">
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Найдено складов: <span className="font-semibold">{filteredWarehouses.length}</span>
             </p>
             <button className="flex items-center bg-accent-500 text-white px-4 py-2 rounded-lg hover:bg-accent-600 transition-colors">
@@ -103,7 +103,7 @@ const PricingPage = () => {
           {filteredWarehouses.map((warehouse) => {
             const marketplaceInfo = getMarketplaceInfo(warehouse.marketplace);
             return (
-              <div key={warehouse.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={warehouse.id} className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-700">
                 {/* Header */}
                 <div className={`${marketplaceInfo.color} text-white p-4`}>
                   <div className="flex items-center justify-between">
@@ -123,27 +123,27 @@ const PricingPage = () => {
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-2 px-2 font-semibold text-gray-700 text-sm">Услуга</th>
-                          <th className="text-right py-2 px-2 font-semibold text-gray-700 text-sm">Стоимость</th>
+                        <tr className="border-b border-gray-600">
+                          <th className="text-left py-2 px-2 font-semibold text-gray-300 text-sm">Услуга</th>
+                          <th className="text-right py-2 px-2 font-semibold text-gray-300 text-sm">Стоимость</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-gray-100">
+                      <tbody className="divide-y divide-gray-700">
                         <tr>
-                          <td className="py-2 px-2 text-sm">До куба</td>
+                          <td className="py-2 px-2 text-sm text-gray-300">До куба</td>
                           <td className="py-2 px-2 text-right font-semibold text-accent-600 text-sm">
                             {warehouse.pricing.toCube.toLocaleString('ru-RU')} ₽
                           </td>
                         </tr>
                         <tr>
-                          <td className="py-2 px-2 text-sm">Коробки (свыше 1м³)</td>
+                          <td className="py-2 px-2 text-sm text-gray-300">Коробки (свыше 1м³)</td>
                           <td className="py-2 px-2 text-right font-semibold text-accent-600 text-sm">
                             {warehouse.pricing.boxes1to3} ₽/шт
                           </td>
                         </tr>
                         {Object.entries(warehouse.pricing.pallets).map(([palletCount, price]) => (
                           <tr key={palletCount}>
-                            <td className="py-2 px-2 text-sm">
+                            <td className="py-2 px-2 text-sm text-gray-300">
                               {(() => {
                                 const count = parseInt(palletCount);
                                 if (count === 1) return '1 паллета';
@@ -161,13 +161,13 @@ const PricingPage = () => {
                     </table>
                   </div>
 
-                  <div className="bg-accent-50 p-3 mt-4 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-2">
+                  <div className="bg-gray-700 p-3 mt-4 rounded-lg border border-gray-600">
+                    <p className="text-xs text-gray-400 mb-2">
                       * Окончательная стоимость рассчитывается индивидуально с учётом всех параметров груза
                     </p>
                     <a
                       href={isAuthenticated ? "/dashboard" : "/#calculator"}
-                      className="inline-flex items-center text-accent-600 font-medium hover:text-accent-700 transition-colors text-xs"
+                      className="inline-flex items-center text-accent-400 font-medium hover:text-accent-300 transition-colors text-xs"
                     >
                       {isAuthenticated ? 'Перейти в личный кабинет →' : 'Рассчитать точную стоимость →'}
                     </a>
@@ -179,20 +179,20 @@ const PricingPage = () => {
         </div>
 
         {/* Additional Services */}
-        <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-primary-800 mb-6">Дополнительные услуги</h2>
+        <div className="mt-12 bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
+          <h2 className="text-2xl font-bold text-white mb-6">Дополнительные услуги</h2>
           
           {/* Основные услуги */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold text-primary-800 mb-6 flex items-center">
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
               <div className="w-1 h-6 bg-accent-500 rounded mr-3"></div>
               Основные услуги
             </h3>
             <div className="grid lg:grid-cols-2 gap-6">
               {Object.entries(additionalServices).map(([key, service]) => (
-                <div key={key} className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div key={key} className="bg-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow border border-gray-600">
                   <div className="flex justify-between items-start mb-3">
-                    <h4 className="font-semibold text-gray-800 text-lg">{service.name}</h4>
+                    <h4 className="font-semibold text-white text-lg">{service.name}</h4>
                     <div className="bg-accent-500 text-white px-3 py-1 rounded-lg font-bold text-sm ml-4 flex-shrink-0">
                       {service.price === 0 ? 'По договоренности' : 
                        service.price < 1 ? `${(service.price * 100)}%` :
@@ -200,7 +200,7 @@ const PricingPage = () => {
                        `${service.price} ₽`}
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -208,15 +208,15 @@ const PricingPage = () => {
 
           {/* Дополнительные расходы */}
           <div>
-            <h3 className="text-lg font-semibold text-primary-800 mb-6 flex items-center">
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
               <div className="w-1 h-6 bg-red-500 rounded mr-3"></div>
               Дополнительные расходы
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               {Object.entries(extraCharges).map(([key, charge]) => (
-                <div key={key} className="bg-red-50 rounded-xl p-6 border border-red-100">
+                <div key={key} className="bg-red-900/20 rounded-xl p-6 border border-red-800">
                   <div className="flex justify-between items-center">
-                    <h4 className="font-semibold text-gray-800">{charge.name}</h4>
+                    <h4 className="font-semibold text-white">{charge.name}</h4>
                     <div className="bg-red-500 text-white px-3 py-1 rounded-lg font-bold text-sm">
                       {charge.price} ₽{charge.unit !== 'фиксированная' ? `/${charge.unit}` : ''}
                     </div>
@@ -228,7 +228,7 @@ const PricingPage = () => {
         </div>
 
         {/* Important Notes */}
-        <div className="mt-8 bg-gradient-to-r from-primary-800 to-primary-700 rounded-2xl p-8 text-white">
+        <div className="mt-8 bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-8 text-white border border-gray-600">
           <h3 className="text-xl font-semibold mb-4">Важная информация</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <ul className="space-y-2">

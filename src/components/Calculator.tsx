@@ -456,33 +456,33 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
   }));
 
   return (
-    <section id="calculator" className="py-16 lg:py-24 bg-gray-50">
+    <section id="calculator" className="py-16 lg:py-24 bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <CalcIcon className="w-8 h-8 text-accent-500" />
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-800">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
               Калькулятор стоимости
             </h2>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Заполните форму для оформления заявки на доставку
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+          <div className="bg-gray-900 rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-700">
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Form */}
               <div className="lg:col-span-2 space-y-6">
-                <h3 className="text-xl font-semibold text-primary-800 mb-6">
+                <h3 className="text-xl font-semibold text-white mb-6">
                   Параметры заявки
                 </h3>
 
                 {/* Даты */}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       <Calendar className="w-4 h-4 inline mr-1" />
                       Дата забора груза *
                     </label>
@@ -492,8 +492,9 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
                       value={formData.pickupDate}
                       min={new Date().toISOString().split('T')[0]}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors ${
-                        errors.pickupDate ? 'border-red-500' : 'border-gray-300'
+                        errors.pickupDate ? 'border-red-500' : 'border-gray-600'
                       }`}
+                      style={{ backgroundColor: '#374151', color: 'white' }}
                       onChange={(e) => {
                         setFormData(prev => ({ ...prev, pickupDate: e.target.value }));
                       }}
@@ -871,15 +872,15 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
               </div>
 
               {/* Info Panel */}
-              <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-primary-800 mb-6">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-8 border border-gray-600">
+                <h3 className="text-xl font-semibold text-white mb-6">
                   Информация о доставке
                 </h3>
                 
                 <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <h4 className="font-semibold text-primary-800 mb-2">Как мы работаем:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                  <div className="bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-600">
+                    <h4 className="font-semibold text-white mb-2">Как мы работаем:</h4>
+                    <ul className="text-sm text-gray-300 space-y-1">
                       <li>• Обработка заявки за 15 минут</li>
                       <li>• Забор груза в удобное время</li>
                       <li>• Доставка точно в срок</li>
@@ -887,9 +888,9 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
                     </ul>
                   </div>
                   
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <h4 className="font-semibold text-primary-800 mb-2">Что включено:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                  <div className="bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-600">
+                    <h4 className="font-semibold text-white mb-2">Что включено:</h4>
+                    <ul className="text-sm text-gray-300 space-y-1">
                       <li>• Бесплатная упаковка</li>
                       <li>• Отслеживание груза</li>
                       <li>• SMS-уведомления</li>
@@ -897,13 +898,13 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
                     </ul>
                   </div>
                   
-                  <div className="bg-accent-100 rounded-lg p-4">
-                    <h4 className="font-semibold text-accent-800 mb-2">Связаться с нами:</h4>
+                  <div className="bg-accent-900 rounded-lg p-4 border border-accent-700">
+                    <h4 className="font-semibold text-accent-200 mb-2">Связаться с нами:</h4>
                     <div className="space-y-2 text-sm">
-                      <a href="tel:+79361302070" className="block text-accent-700 hover:text-accent-800">
+                      <a href="tel:+79361302070" className="block text-accent-300 hover:text-accent-200">
                         📞 +7 (936) 130-20-70
                       </a>
-                      <a href="https://wa.me/79361302070" className="block text-accent-700 hover:text-accent-800">
+                      <a href="https://wa.me/79361302070" className="block text-accent-300 hover:text-accent-200">
                         💬 WhatsApp
                       </a>
                       <a href="https://t.me/+79262168760" className="block text-accent-700 hover:text-accent-800">
