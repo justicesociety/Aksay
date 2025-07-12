@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* Visual */}
           <div className="relative animate-slide-up">
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl p-8 lg:p-12 border border-gray-100">
+            <div className="bg-gradient-to-br from-blue-50 to-accent-50 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-100">
               {/* Header with icon and badge */}
               <div className="flex items-center justify-between mb-6">
                 <div className="bg-gradient-to-r from-accent-500 to-accent-600 w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
@@ -77,38 +77,38 @@ const Hero = () => {
                 <h3 className="text-2xl font-bold text-primary-800 mb-3">
                   Работаем 24/7
                 </h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className="text-primary-700 mb-8 leading-relaxed">
                   Принимаем и обрабатываем заявки круглосуточно. 
                   Быстрая обработка и профессиональный сервис.
                 </p>
                 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl p-4">
                     <div className="text-3xl font-bold text-accent-600 mb-1">24</div>
-                    <div className="text-sm text-gray-600 font-medium">часа</div>
+                    <div className="text-sm text-accent-700 font-medium">часа</div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl p-4">
                     <div className="text-3xl font-bold text-blue-600 mb-1">7</div>
-                    <div className="text-sm text-gray-600 font-medium">дней</div>
+                    <div className="text-sm text-blue-700 font-medium">дней</div>
                   </div>
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-4">
                     <div className="text-3xl font-bold text-green-600 mb-1">365</div>
-                    <div className="text-sm text-gray-600 font-medium">дней</div>
+                    <div className="text-sm text-green-700 font-medium">дней</div>
                   </div>
                 </div>
                 
                 {/* Features */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>Обработка заявок за 15 минут</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>Поддержка в мессенджерах</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>Отслеживание груза онлайн</span>
                   </div>
