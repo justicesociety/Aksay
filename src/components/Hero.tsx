@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* Visual */}
           <div className="relative animate-slide-up">
-            <div className="bg-gradient-to-br from-blue-50 to-accent-50 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-100">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl shadow-2xl p-8 lg:p-12 border border-blue-300">
               {/* Header with icon and badge */}
               <div className="flex items-center justify-between mb-6">
                 <div className="bg-gradient-to-r from-accent-500 to-accent-600 w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
@@ -74,42 +74,42 @@ const Hero = () => {
               
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-primary-800 mb-3">
+                <h3 className="text-2xl font-bold text-blue-900 mb-3">
                   Работаем 24/7
                 </h3>
-                <p className="text-primary-700 mb-8 leading-relaxed">
+                <p className="text-blue-800 mb-8 leading-relaxed">
                   Принимаем и обрабатываем заявки круглосуточно. 
                   Быстрая обработка и профессиональный сервис.
                 </p>
                 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-accent-600 mb-1">24</div>
-                    <div className="text-sm text-accent-700 font-medium">часа</div>
+                  <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-4">
+                    <div className="text-3xl font-bold text-blue-700 mb-1">24</div>
+                    <div className="text-sm text-blue-800 font-medium">часа</div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">7</div>
-                    <div className="text-sm text-blue-700 font-medium">дней</div>
+                  <div className="bg-gradient-to-br from-blue-300 to-blue-400 rounded-xl p-4">
+                    <div className="text-3xl font-bold text-blue-800 mb-1">7</div>
+                    <div className="text-sm text-blue-900 font-medium">дней</div>
                   </div>
-                  <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-4">
-                    <div className="text-3xl font-bold text-green-600 mb-1">365</div>
-                    <div className="text-sm text-green-700 font-medium">дней</div>
+                  <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-4">
+                    <div className="text-3xl font-bold text-blue-700 mb-1">365</div>
+                    <div className="text-sm text-blue-800 font-medium">дней</div>
                   </div>
                 </div>
                 
                 {/* Features */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
+                    <CheckCircle className="w-4 h-4 text-blue-600" />
                     <span>Обработка заявок за 15 минут</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
+                    <CheckCircle className="w-4 h-4 text-blue-600" />
                     <span>Поддержка в мессенджерах</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-primary-600">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                  <div className="flex items-center justify-center space-x-2 text-sm text-blue-700">
+                    <CheckCircle className="w-4 h-4 text-blue-600" />
                     <span>Отслеживание груза онлайн</span>
                   </div>
                 </div>
