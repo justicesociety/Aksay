@@ -456,7 +456,7 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
   }));
 
   return (
-    <section id="calculator" className="py-16 lg:py-24 bg-gray-50">
+    <section id="calculator" className="py-16 lg:py-24" style={{backgroundColor: 'rgb(239, 238, 249)'}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-4">

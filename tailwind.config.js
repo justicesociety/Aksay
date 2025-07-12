@@ -29,6 +29,9 @@ export default {
           900: '#002766',
         }
       },
+      backgroundColor: {
+        'custom-bg': 'rgb(239, 238, 249)',
+      },
       fontFamily: {
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },

@@ -29,7 +29,7 @@ const PricingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(239, 238, 249)'}}>
       <div className="max-w-7xl mx-auto">
         {/* Back to Home Button */}
         <div className="mb-6">
