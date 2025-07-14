@@ -27,6 +27,7 @@ const Header = () => {
   const getNavItems = () => {
     const baseItems = [
       { name: 'Главная', href: '/' },
+      { name: 'График', href: '#schedule' },
       { name: 'Прайс', href: '/pricing' },
       { name: 'Контакты', href: '#contacts' },
     ];

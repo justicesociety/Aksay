@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Advantages from './components/Advantages';
+import Schedule from './components/Schedule';
 import Calculator from './components/Calculator';
 import WorkSteps from './components/WorkSteps';
 import Pricing from './components/Pricing';
@@ -25,6 +26,7 @@ function MainContent() {
       <main>
         <Hero />
         <Advantages />
+        <Schedule />
         {!isAuthenticated && <Calculator />}
         <WorkSteps />
         <Pricing />
