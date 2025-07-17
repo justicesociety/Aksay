@@ -35,7 +35,7 @@ const Calculator = () => {
   const sendToGoogleSheets = async (orderData: any) => {
     try {
       // ВАЖНО: Замените на ваш реальный URL Google Apps Script Web App
-      const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzP3DSxoei9eHVLlZzk8nb-zVZnMcXhXs6FUbruo5gBhUQL-g0sV_GGZfV5t0y_n1r7Sw/exec';
       
       // Проверяем, что URL настроен
       if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
