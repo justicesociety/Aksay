@@ -6,27 +6,21 @@
 +2. Создайте новую таблицу
 +3. Назовите её "Заявки Аксай Логистик"
 +4. В первой строке создайте заголовки столбцов:
-+   - A1: Дата и время
-+   - B1: Компания
-+   - C1: Телефон
-+   - D1: Дата забора
-+   - E1: Дата доставки
-+   - F1: Время забора
-+   - G1: Адрес забора
-+   - H1: Адрес доставки
-+   - I1: Коробки
-+   - J1: Паллеты
-+   - K1: Вес
-+   - L1: Погрузка
-+   - M1: Паллетирование
-+   - N1: Комментарий
-
-function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({status: 'API работает'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-+   - O1: Расчетная стоимость
++   - A1: Дата забора
++   - B1: Дата доставки
++   - C1: Компания
++   - D1: Телефон
++   - E1: Время забора
++   - F1: Адрес забора
++   - G1: Адрес доставки
++   - H1: Кол-во паллет
++   - I1: Кол-во коробок
++   - J1: Вес/ паллеты
++   - K1: Погрузка
++   - L1: Паллетирование
++   - M1: Комментарий
++   - N1: Расчетная стоимость
++   - O1: Стоимость доставки
 
 ## Шаг 2: Создание Google Apps Script
 
@@ -44,26 +38,32 @@ function doPost(e) {
   var sheet = spreadsheet.getSheetByName('Лист1'); // или название вашего листа
   
   sheet.appendRow([
-    new Date().toLocaleString('ru-RU'),
-    data.company,
-    data.phone,
     data.pickupDate,
     data.deliveryDate,
+    data.company,
+    data.phone,
     data.pickupTime,
     data.pickupAddress,
     data.deliveryAddress,
-    data.boxes,
     data.pallets,
+    data.boxes,
     data.weight,
     data.loading,
     data.palletizing,
     data.comment,
-    data.calculatedCost
+    data.calculatedCost,
+    data.finalCost || ''
   ]);
   
   return ContentService
     .createTextOutput('OK')
     .setMimeType(ContentService.MimeType.TEXT);
+}
+
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({status: 'API работает'}))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 ```
 
@@ -79,21 +79,21 @@ function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Лист1');
   
   sheet.appendRow([
-    new Date().toLocaleString('ru-RU'),
-    data.company,
-    data.phone,
     data.pickupDate,
     data.deliveryDate,
+    data.company,
+    data.phone,
     data.pickupTime,
     data.pickupAddress,
     data.deliveryAddress,
-    data.boxes,
     data.pallets,
+    data.boxes,
     data.weight,
     data.loading,
     data.palletizing,
     data.comment,
-    data.calculatedCost
+    data.calculatedCost,
+    data.finalCost || ''
   ]);
   
   return ContentService
