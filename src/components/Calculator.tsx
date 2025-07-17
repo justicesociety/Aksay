@@ -34,8 +34,14 @@ const Calculator = () => {
   // Функция отправки данных в Google Таблицы
   const sendToGoogleSheets = async (orderData: any) => {
     try {
-      // Здесь будет URL вашего Google Apps Script Web App
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXRDcw-1G3-Sj1eHRw2oWiafs-FCgP1KjaxXwkmnYnknLM9dkKK2TWu_N2jWMhdgkBhg/exec';
+      // ВАЖНО: Замените на ваш реальный URL Google Apps Script Web App
+      const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+      
+      // Проверяем, что URL настроен
+      if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        console.warn('Google Apps Script URL не настроен. Пропускаем отправку в Google Таблицы.');
+        return false;
+      }
       
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -64,7 +70,7 @@ const Calculator = () => {
       
       return true;
     } catch (error) {
-      console.error('Ошибка отправки в Google Таблицы:', error);
+      console.warn('Google Таблицы недоступны:', error);
       return false;
     }
   };
