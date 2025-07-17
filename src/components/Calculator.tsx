@@ -27,6 +27,7 @@ const Calculator = () => {
 
   const [result, setResult] = useState<number | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<any>({});
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
@@ -43,21 +44,21 @@ const Calculator = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          timestamp: new Date().toLocaleString('ru-RU'),
-          company: orderData.company,
-          phone: orderData.phone,
           pickupDate: new Date(orderData.pickupDate).toLocaleDateString('ru-RU'),
           deliveryDate: new Date(orderData.deliveryDate).toLocaleDateString('ru-RU'),
+          company: orderData.company,
+          phone: orderData.phone,
           pickupTime: orderData.pickupTime,
           pickupAddress: orderData.pickupAddress,
           deliveryAddress: orderData.deliveryAddress,
-          boxes: orderData.boxes || 0,
           pallets: orderData.pallets || 0,
+          boxes: orderData.boxes || 0,
           weight: orderData.weight,
           loading: orderData.loading ? 'Да' : 'Нет',
           palletizing: orderData.palletizing ? 'Да' : 'Нет',
           comment: orderData.comment,
-          calculatedCost: result || 0
+          calculatedCost: result || 0,
+          finalCost: '' // Пустое поле для финальной стоимости, которую заполнит менеджер
         })
       });
       
@@ -400,6 +401,9 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
       return;
     }
 
+    // Блокируем кнопку
+    setIsSubmitting(true);
+
     // Отправляем данные в Google Таблицы и Telegram
     const [sheetsSuccess, telegramSuccess] = await Promise.all([
       sendToGoogleSheets(formData),
@@ -439,6 +443,9 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
     } else {
       alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону: +7 (936) 130-20-70');
     }
+    
+    // Разблокируем кнопку
+    setIsSubmitting(false);
   };
 
   const timeSlots = [
@@ -863,9 +870,14 @@ ${orderData.comment ? `💬 *Комментарий:* ${orderData.comment}` : ''
                 ) : (
                   <button 
                     onClick={handleSubmitOrder}
-                    className="w-full bg-primary-800 text-white py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 hover:shadow-lg hover:scale-105"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 rounded-lg font-semibold transition-all duration-200 ${
+                      isSubmitting 
+                        ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+                        : 'bg-primary-800 text-white hover:bg-primary-700 hover:shadow-lg hover:scale-105'
+                    }`}
                   >
-                    Подтвердить заявку
+                    {isSubmitting ? 'Отправляем заявку...' : 'Подтвердить заявку'}
                   </button>
                 )}
               </div>
